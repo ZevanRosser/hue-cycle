@@ -1,5 +1,3 @@
-<img align="left" width="46" height="80" src="./icon/icon-transparent.png">
+<img src="./icon/banner.gif">
 
-# Hue Cycle (Development)
-
-Cycle between colors on Philips Hue smart lights.
+iOS app that lets you cycle colors on your Philips Hue smart lights (WIP).

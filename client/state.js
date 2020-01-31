@@ -14,13 +14,10 @@ const augmentDispatch = (dispatch, getState) => async action => {
 
 export const StateContext = createContext()
 
-let _state
 export const StateProvider = ({children}) => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
-  _state = state
-
-  const getState = () => _state
+  const getState = () => state
 
   return (
     <StateContext.Provider
