@@ -10,11 +10,16 @@ const StyledSafeAreaView = styled(props => <SafeAreaView {...props} />)`
   flex: 1;
 `
 
+const AppContainer = styled.View`
+  background-color: ${COLORS.BLACK};
+  flex: 1;
+`
+
 export default () => (
   <StateProvider>
     <StatusBar barStyle="light-content" />
-    <StyledSafeAreaView>
+    <AppContainer>
       <Layout />
-    </StyledSafeAreaView>
+    </AppContainer>
   </StateProvider>
 )

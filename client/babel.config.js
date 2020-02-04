@@ -11,6 +11,7 @@ module.exports = {
           actions: './actions',
           assets: './assets',
           components: './components',
+          containers: './containers',
           constants: './constants',
           models: './models',
           reducer: './reducer',

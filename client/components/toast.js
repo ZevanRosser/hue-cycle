@@ -1,9 +1,7 @@
-import {removeToast} from 'actions'
-import {ANIMATION_TIMINGS, COLORS, GUTTER, TOAST} from 'constants'
+import {ANIMATION_TIMINGS, COLORS, TOAST} from 'constants'
 import React, {useEffect, useState} from 'react'
 import {Animated} from 'react-native'
 import {iOSUIKit} from 'react-native-typography'
-import {withState} from 'state'
 import styled from 'styled-components/native'
 
 const TOAST_TIMING = 5000
@@ -13,15 +11,6 @@ const alertColorMap = {
   [TOAST.INFO]: COLORS.GREEN,
   [TOAST.SUCCESS]: COLORS.BLUE
 }
-
-const ToastsContainer = styled.View`
-  align-items: center;
-  bottom: ${GUTTER}px;
-  flex-direction: column;
-  justify-content: flex-end;
-  position: absolute;
-  width: 100%;
-`
 
 const StyledToast = styled(props => <Animated.View {...props} />)`
   align-items: center;
@@ -36,7 +25,7 @@ const ToastMessage = styled.Text`
   text-align: center;
 `
 
-const Toast = ({message, type, onDismiss}) => {
+export default ({message, type, onDismiss}) => {
   const [fadeAnim] = useState(new Animated.Value(0))
 
   useEffect(() => {
@@ -50,8 +39,8 @@ const Toast = ({message, type, onDismiss}) => {
         toValue: 0,
         duration: ANIMATION_TIMINGS.FAST
       })
-    ]).start()
-  }, [])
+    ]).start(onDismiss)
+  })
 
   return (
     <StyledToast
@@ -69,24 +58,5 @@ const Toast = ({message, type, onDismiss}) => {
       }}>
       <ToastMessage>{message}</ToastMessage>
     </StyledToast>
-  )
-}
-
-export default () => {
-  const {toasts, dispatch} = withState()
-
-  return (
-    <ToastsContainer>
-      {toasts
-        .filter(({shown}) => !shown)
-        .map(({message, id, type}) => (
-          <Toast
-            key={id}
-            message={message}
-            onDismiss={() => dispatch(removeToast(id))}
-            type={type}
-          />
-        ))}
-    </ToastsContainer>
   )
 }

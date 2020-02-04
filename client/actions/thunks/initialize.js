@@ -1,28 +1,29 @@
-import {addToast, setLoading} from 'actions'
+import {addToast, setConnected, setInitialized, setLoading} from 'actions'
 import {Client} from 'models'
 
-export default () => async dispatch => {
-  await dispatch(setLoading(true))
+export default () => async (dispatch, getState) => {
+  const {initialized} = getState()
+
+  if (initialized) {
+    return
+  }
+
+  dispatch(setLoading(true))
 
   try {
     const client = await Client.createClientContext()
-    const bridge = await client.getBridge()
+    // const bridge = await client.getBridge()
 
-    if (!bridge.isConnected()) {
-      // await dispatch(setConfigured(false))
-
-      return
-    }
+    // dispatch(setConnected(bridge.isConnected()))
 
     // const colors = await client.getColors()
     // const lights = await client.getLights()
   } catch ({message}) {
     dispatch(addToast(message, 'alert'))
-
-    return
+  } finally {
+    setTimeout(async () => {
+      await dispatch(setLoading(false))
+      await dispatch(setInitialized(true))
+    }, 3000)
   }
-
-  setTimeout(async () => {
-    await dispatch(setLoading(false))
-  }, 5000)
 }
