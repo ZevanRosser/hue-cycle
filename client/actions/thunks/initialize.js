@@ -1,4 +1,10 @@
-import {addToast, setConnected, setInitialized, setLoading} from 'actions'
+import {
+  addToast,
+  setConnected,
+  setInitialized,
+  setInteractable,
+  setLoading
+} from 'actions'
 import {Client} from 'models'
 
 export default () => async (dispatch, getState) => {
@@ -8,7 +14,8 @@ export default () => async (dispatch, getState) => {
     return
   }
 
-  dispatch(setLoading(true))
+  await dispatch(setLoading(true))
+  await dispatch(setInteractable(false))
 
   try {
     const client = await Client.createClientContext()
@@ -19,11 +26,11 @@ export default () => async (dispatch, getState) => {
     // const colors = await client.getColors()
     // const lights = await client.getLights()
   } catch ({message}) {
-    dispatch(addToast(message, 'alert'))
+    await dispatch(addToast(message, 'alert'))
   } finally {
     setTimeout(async () => {
       await dispatch(setLoading(false))
       await dispatch(setInitialized(true))
-    }, 3000)
+    }, 5000)
   }
 }

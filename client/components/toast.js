@@ -40,7 +40,7 @@ export default ({message, type, onDismiss}) => {
         duration: ANIMATION_TIMINGS.FAST
       })
     ]).start(onDismiss)
-  })
+  }, [])
 
   return (
     <StyledToast

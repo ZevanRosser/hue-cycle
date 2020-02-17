@@ -1,5 +1,6 @@
 export setConnected from './set-connected'
 export setInitialized from './set-initialized'
+export setInteractable from './set-interactable'
 export setLoading from './set-loading'
 export setToasts from './set-toasts'
 export * from './thunks'

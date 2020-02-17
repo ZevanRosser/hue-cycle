@@ -1,16 +1,16 @@
-import {COLORS, GUTTER} from 'constants'
 import {Headline, Section} from 'components'
-import React from 'react'
-import {ScrollView} from 'react-native'
+import {ANIMATION_TIMINGS, COLORS, GUTTER} from 'constants'
+import React, {useEffect, useState} from 'react'
+import {Animated, Dimensions, Easing} from 'react-native'
+import {withState} from 'state'
 import styled from 'styled-components/native'
 
-const StyledScrollView = styled(props => <ScrollView {...props} />)`
-  background-color: ${COLORS.BLACK};
-  border-top-left-radius: ${GUTTER / 2};
-  border-top-right-radius: ${GUTTER / 2};
-  border: 1px solid green;
+const StyledScrollView = styled(props => <Animated.ScrollView {...props} />)`
+  background-color: ${COLORS.DARK_GRAY};
+  border-top-left-radius: ${GUTTER / 3};
+  border-top-right-radius: ${GUTTER / 3};
   bottom: 0;
-  height: 72%;
+  height: 62%;
   left: 0;
   position: absolute;
   right: 0;
@@ -18,15 +18,43 @@ const StyledScrollView = styled(props => <ScrollView {...props} />)`
 
 const contentContainerStyle = {
   padding: GUTTER / 2,
-  paddingTop: GUTTER * 1.5
+  paddingTop: GUTTER
 }
 
 export default () => {
+  const {loading} = withState()
+  const [slideUpAnim] = useState(new Animated.Value(0))
+  const {height} = Dimensions.get('window')
+
+  useEffect(() => {
+    if (loading) {
+      return
+    }
+
+    Animated.timing(slideUpAnim, {
+      toValue: 1,
+      duration: ANIMATION_TIMINGS.SLOW,
+      easing: Easing.inOut(Easing.cubic),
+      useNativeDriver: true
+    }).start()
+  }, [loading])
+
   return (
     <StyledScrollView
       contentContainerStyle={contentContainerStyle}
       contentInsetAdjustmentBehavior="automatic"
-      indicatorStyle="white">
+      indicatorStyle="white"
+      style={{
+        opacity: slideUpAnim,
+        transform: [
+          {
+            translateY: slideUpAnim.interpolate({
+              inputRange: [0, 1],
+              outputRange: [height * 0.62, 0]
+            })
+          }
+        ]
+      }}>
       <Section>
         <Headline>Colors</Headline>
       </Section>
@@ -34,7 +62,7 @@ export default () => {
         <Headline>Lights</Headline>
       </Section>
       <Section>
-        <Headline>Configuration</Headline>
+        <Headline>Behavior</Headline>
       </Section>
     </StyledScrollView>
   )

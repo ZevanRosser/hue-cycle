@@ -1,5 +1,5 @@
-import {initialize} from 'actions'
-import {Body, Header, Toasts} from 'containers'
+import {initialize, setInteractable} from 'actions'
+import {Body, Header, Splash, Toasts} from 'containers'
 import React, {useEffect} from 'react'
 import {withState} from 'state'
 import styled from 'styled-components/native'
@@ -17,6 +17,7 @@ export default () => {
 
   return (
     <LayoutContainer>
+      <Splash onAnimationComplete={() => dispatch(setInteractable(true))} />
       <Header />
       <Body />
       <Toasts />

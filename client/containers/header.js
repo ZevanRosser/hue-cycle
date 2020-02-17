@@ -1,17 +1,22 @@
 import MaskedView from '@react-native-community/masked-view'
-import {Light} from 'components'
-import {ANIMATION_TIMINGS, COLORS} from 'constants'
-import React, {useEffect, useState} from 'react'
-import {Animated, Dimensions, Easing} from 'react-native'
-import AnimatedLinearGradient, {
-  presetColors
-} from 'react-native-animated-linear-gradient'
+import {Lamp} from 'components'
+import {COLORS, LAYOUT} from 'constants'
+import React from 'react'
+import {Animated} from 'react-native'
+import AnimatedLinearGradient from 'react-native-animated-linear-gradient'
 import {withState} from 'state'
 import styled from 'styled-components/native'
 
-const HeaderContainer = styled(props => <Animated.View {...props} />)`
+const LightContainer = styled(props => <Animated.View {...props} />)`
   align-items: center;
-  height: 30%;
+  flex: 1;
+  justify-content: center;
+  transform: translateY(${LAYOUT.HEIGHT * -0.25}px);
+`
+
+export const HeaderContainer = styled(props => <Animated.View {...props} />)`
+  align-items: center;
+  height: 40%;
   justify-content: center;
   left: 0;
   position: absolute;
@@ -19,83 +24,33 @@ const HeaderContainer = styled(props => <Animated.View {...props} />)`
   top: 0;
 `
 
-const LightBackground = styled(props => <Animated.View {...props} />)`
+export const HeaderLightBackground = styled(props => (
+  <Animated.View {...props} />
+))`
   flex: 1;
-  background-color: ${COLORS.GRAY};
+  background-color: ${COLORS.LIGHT_GRAY};
 `
 
-const LightContainer = styled(props => <Animated.View {...props} />)`
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-`
-
-const StyledMaskedView = styled(props => <MaskedView {...props} />)`
-  height: 105px;
-  width: 60px;
+export const HeaderMaskedView = styled(props => <MaskedView {...props} />)`
+  height: ${LAYOUT.WIDTH * 0.4 * (512 / 149)}px;
+  width: ${LAYOUT.WIDTH * 0.4}px;
 `
 
 export default () => {
-  const {loading} = withState()
-  const [lightFadeAnim] = useState(new Animated.Value(0))
-  const [slideUpAnim] = useState(new Animated.Value(0))
-  const [splash, setSplash] = useState(true)
-  const {height} = Dimensions.get('window')
-
-  useEffect(() => {
-    Animated.timing(lightFadeAnim, {
-      toValue: 1,
-      duration: ANIMATION_TIMINGS.LONG
-    }).start()
-  })
-
-  useEffect(() => {
-    if (loading) {
-      return
-    }
-
-    Animated.timing(slideUpAnim, {
-      toValue: 1,
-      duration: ANIMATION_TIMINGS.SLOW,
-      easing: Easing.inOut(Easing.cubic),
-      useNativeDriver: true
-    }).start(() => setSplash(false))
-  }, [loading])
-
-  if (splash) {
-    return (
-      <HeaderContainer
-        style={{
-          transform: [
-            {
-              translateY: slideUpAnim.interpolate({
-                inputRange: [0, 1],
-                outputRange: [height * 0.35, 0]
-              })
-            }
-          ]
-        }}>
-        <StyledMaskedView
-          maskElement={<Light style={{opacity: lightFadeAnim}} />}>
-          <AnimatedLinearGradient
-            customColors={presetColors.instagram}
-            speed={750}
-          />
-          <LightBackground style={{opacity: slideUpAnim}} />
-        </StyledMaskedView>
-      </HeaderContainer>
-    )
-  }
+  const {interactable} = withState()
 
   return (
-    <HeaderContainer>
+    <HeaderContainer
+      style={{
+        opacity: Number(interactable)
+      }}>
       <AnimatedLinearGradient
-        customColors={presetColors.instagram}
+        customColors={[COLORS.BLACK, COLORS.BLACK]}
         speed={2000}>
-        <LightContainer style={{opacity: lightFadeAnim}}>
-          <StyledMaskedView maskElement={<Light />}>
-            <LightBackground />
-          </StyledMaskedView>
+        <LightContainer>
+          <HeaderMaskedView maskElement={<Lamp />}>
+            <HeaderLightBackground />
+          </HeaderMaskedView>
         </LightContainer>
       </AnimatedLinearGradient>
     </HeaderContainer>

@@ -1,4 +1,4 @@
 export Headline from './headline'
-export Light from './light'
+export Lamp from './lamp'
 export Section from './section'
 export Toast from './toast'

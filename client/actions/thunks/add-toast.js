@@ -8,8 +8,7 @@ export default (message, type) => (dispatch, getState) => {
       {
         message,
         type,
-        id: uuid.v4(),
-        shown: false
+        id: uuid.v4()
       }
     ])
   )

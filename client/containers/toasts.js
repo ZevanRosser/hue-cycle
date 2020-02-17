@@ -19,16 +19,14 @@ export default () => {
 
   return (
     <ToastsContainer>
-      {toasts
-        .filter(({shown}) => !shown)
-        .map(({message, id, type}) => (
-          <Toast
-            key={id}
-            message={message}
-            onDismiss={() => dispatch(removeToast(id))}
-            type={type}
-          />
-        ))}
+      {toasts.map(({message, id, type}) => (
+        <Toast
+          key={id}
+          message={message}
+          onDismiss={() => dispatch(removeToast(id))}
+          type={type}
+        />
+      ))}
     </ToastsContainer>
   )
 }
