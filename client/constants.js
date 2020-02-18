@@ -9,7 +9,7 @@ export const ANIMATION_TIMINGS = {
 export const COLORS = {
   BLACK: '#000000',
   BLUE: '#4EBFE5',
-  DARK_GRAY: '#121212',
+  DARK_GRAY: '#161a25',
   GREEN: '#9ED267',
   LIGHT_GRAY: '#8E8E93',
   PURPLE: '#AA90E8',
@@ -17,6 +17,7 @@ export const COLORS = {
   WHITE: '#FFFFFF',
   YELLOW: '#FCCC53'
 }
+export const FONT_FAMILY = 'Brandon Text'
 export const GUTTER = 30
 export const LAYOUT = {
   HEIGHT: Dimensions.get('window').height,

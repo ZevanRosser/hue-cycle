@@ -1,5 +1,9 @@
-import MaskedView from '@react-native-community/masked-view'
-import {Lamp} from 'components'
+import {
+  HeaderContainer,
+  HeaderLampBackground,
+  HeaderMaskedView,
+  Lamp
+} from 'components'
 import {COLORS, LAYOUT} from 'constants'
 import React from 'react'
 import {Animated} from 'react-native'
@@ -12,28 +16,6 @@ const LightContainer = styled(props => <Animated.View {...props} />)`
   flex: 1;
   justify-content: center;
   transform: translateY(${LAYOUT.HEIGHT * -0.25}px);
-`
-
-export const HeaderContainer = styled(props => <Animated.View {...props} />)`
-  align-items: center;
-  height: 40%;
-  justify-content: center;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-`
-
-export const HeaderLightBackground = styled(props => (
-  <Animated.View {...props} />
-))`
-  flex: 1;
-  background-color: ${COLORS.LIGHT_GRAY};
-`
-
-export const HeaderMaskedView = styled(props => <MaskedView {...props} />)`
-  height: ${LAYOUT.WIDTH * 0.4 * (512 / 149)}px;
-  width: ${LAYOUT.WIDTH * 0.4}px;
 `
 
 export default () => {
@@ -49,7 +31,7 @@ export default () => {
         speed={2000}>
         <LightContainer>
           <HeaderMaskedView maskElement={<Lamp />}>
-            <HeaderLightBackground />
+            <HeaderLampBackground />
           </HeaderMaskedView>
         </LightContainer>
       </AnimatedLinearGradient>

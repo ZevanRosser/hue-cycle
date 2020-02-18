@@ -1,7 +1,6 @@
-import {ANIMATION_TIMINGS, COLORS, TOAST} from 'constants'
+import {ANIMATION_TIMINGS, COLORS, FONT_FAMILY, TOAST} from 'constants'
 import React, {useEffect, useState} from 'react'
 import {Animated} from 'react-native'
-import {iOSUIKit} from 'react-native-typography'
 import styled from 'styled-components/native'
 
 const TOAST_TIMING = 5000
@@ -21,7 +20,10 @@ const StyledToast = styled(props => <Animated.View {...props} />)`
 `
 
 const ToastMessage = styled.Text`
-  ${iOSUIKit.subheadEmphasizedWhite};
+  color: ${COLORS.WHITE};
+  font-family: ${FONT_FAMILY};
+  font-size: 15px;
+  font-weight: bold;
   text-align: center;
 `
 

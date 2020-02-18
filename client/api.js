@@ -17,7 +17,7 @@ export const getBridge = async accessToken => {
   })
 
   if (!successful) {
-    throw new Error(`Could not fetch Hue Bridge. Got ${message}.`)
+    throw new Error(`Could not fetch Hue Bridge`)
   }
 
   return bridge
@@ -37,7 +37,7 @@ export const login = async (clientId, clientSecret) => {
   })
 
   if (!successful) {
-    throw new Error(`Could not login. Got ${message}.`)
+    throw new Error(`Could not login`)
   }
 
   return accessToken

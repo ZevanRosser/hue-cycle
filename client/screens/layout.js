@@ -1,4 +1,5 @@
 import {initialize, setInteractable} from 'actions'
+import {Headline, Section} from 'components'
 import {Body, Header, Splash, Toasts} from 'containers'
 import React, {useEffect} from 'react'
 import {withState} from 'state'
@@ -19,7 +20,17 @@ export default () => {
     <LayoutContainer>
       <Splash onAnimationComplete={() => dispatch(setInteractable(true))} />
       <Header />
-      <Body />
+      <Body>
+        <Section>
+          <Headline>Colors</Headline>
+        </Section>
+        <Section>
+          <Headline>Lights</Headline>
+        </Section>
+        <Section>
+          <Headline>Behavior</Headline>
+        </Section>
+      </Body>
       <Toasts />
     </LayoutContainer>
   )

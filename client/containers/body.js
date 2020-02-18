@@ -1,14 +1,13 @@
-import {Headline, Section} from 'components'
-import {ANIMATION_TIMINGS, COLORS, GUTTER} from 'constants'
+import {ANIMATION_TIMINGS, COLORS, GUTTER, LAYOUT} from 'constants'
 import React, {useEffect, useState} from 'react'
-import {Animated, Dimensions, Easing} from 'react-native'
+import {Animated, Easing} from 'react-native'
 import {withState} from 'state'
 import styled from 'styled-components/native'
 
 const StyledScrollView = styled(props => <Animated.ScrollView {...props} />)`
   background-color: ${COLORS.DARK_GRAY};
-  border-top-left-radius: ${GUTTER / 3};
-  border-top-right-radius: ${GUTTER / 3};
+  border-top-left-radius: ${GUTTER / 3}px;
+  border-top-right-radius: ${GUTTER / 3}px;
   bottom: 0;
   height: 62%;
   left: 0;
@@ -17,14 +16,12 @@ const StyledScrollView = styled(props => <Animated.ScrollView {...props} />)`
 `
 
 const contentContainerStyle = {
-  padding: GUTTER / 2,
-  paddingTop: GUTTER
+  padding: GUTTER / 2
 }
 
-export default () => {
+export default ({children}) => {
   const {loading} = withState()
   const [slideUpAnim] = useState(new Animated.Value(0))
-  const {height} = Dimensions.get('window')
 
   useEffect(() => {
     if (loading) {
@@ -34,7 +31,7 @@ export default () => {
     Animated.timing(slideUpAnim, {
       toValue: 1,
       duration: ANIMATION_TIMINGS.SLOW,
-      easing: Easing.inOut(Easing.cubic),
+      easing: Easing.elastic(1),
       useNativeDriver: true
     }).start()
   }, [loading])
@@ -50,20 +47,12 @@ export default () => {
           {
             translateY: slideUpAnim.interpolate({
               inputRange: [0, 1],
-              outputRange: [height * 0.62, 0]
+              outputRange: [LAYOUT.HEIGHT * 0.25, 0]
             })
           }
         ]
       }}>
-      <Section>
-        <Headline>Colors</Headline>
-      </Section>
-      <Section>
-        <Headline>Lights</Headline>
-      </Section>
-      <Section>
-        <Headline>Behavior</Headline>
-      </Section>
+      {children}
     </StyledScrollView>
   )
 }

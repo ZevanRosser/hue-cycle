@@ -8,5 +8,5 @@ const StyledImage = styled(props => <Animated.Image {...props} />)`
 `
 
 export default ({style}) => (
-  <StyledImage source={require('assets/lamp.png')} style={style} />
+  <StyledImage source={require('assets/images/lamp.png')} style={style} />
 )
