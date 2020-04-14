@@ -1,7 +1,6 @@
-import {ANIMATION_TIMINGS, COLORS, GUTTER, LAYOUT} from 'constants'
-import React, {useEffect, useState} from 'react'
-import {Animated, Easing} from 'react-native'
-import {withState} from 'state'
+import {COLORS, GUTTER, LAYOUT} from 'constants'
+import React from 'react'
+import {Animated} from 'react-native'
 import styled from 'styled-components/native'
 
 const StyledScrollView = styled(props => <Animated.ScrollView {...props} />)`
@@ -9,7 +8,7 @@ const StyledScrollView = styled(props => <Animated.ScrollView {...props} />)`
   border-top-left-radius: ${GUTTER / 3}px;
   border-top-right-radius: ${GUTTER / 3}px;
   bottom: 0;
-  height: 62%;
+  height: ${LAYOUT.BODY_WIDTH_PERCENT}%;
   left: 0;
   position: absolute;
   right: 0;
@@ -19,40 +18,11 @@ const contentContainerStyle = {
   padding: GUTTER / 2
 }
 
-export default ({children}) => {
-  const {loading} = withState()
-  const [slideUpAnim] = useState(new Animated.Value(0))
-
-  useEffect(() => {
-    if (loading) {
-      return
-    }
-
-    Animated.timing(slideUpAnim, {
-      toValue: 1,
-      duration: ANIMATION_TIMINGS.SLOW,
-      easing: Easing.elastic(1),
-      useNativeDriver: true
-    }).start()
-  }, [loading])
-
-  return (
-    <StyledScrollView
-      contentContainerStyle={contentContainerStyle}
-      contentInsetAdjustmentBehavior="automatic"
-      indicatorStyle="white"
-      style={{
-        opacity: slideUpAnim,
-        transform: [
-          {
-            translateY: slideUpAnim.interpolate({
-              inputRange: [0, 1],
-              outputRange: [LAYOUT.HEIGHT * 0.25, 0]
-            })
-          }
-        ]
-      }}>
-      {children}
-    </StyledScrollView>
-  )
-}
+export default ({children}) => (
+  <StyledScrollView
+    contentContainerStyle={contentContainerStyle}
+    contentInsetAdjustmentBehavior="automatic"
+    indicatorStyle="white">
+    {children}
+  </StyledScrollView>
+)

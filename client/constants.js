@@ -2,9 +2,9 @@ import {Dimensions} from 'react-native'
 
 // ui
 export const ANIMATION_TIMINGS = {
-  FAST: 250,
-  MEDIUM: 500,
-  SLOW: 800
+  FAST: 125,
+  MEDIUM: 250,
+  SLOW: 500
 }
 export const COLORS = {
   BLACK: '#000000',
@@ -18,8 +18,14 @@ export const COLORS = {
   YELLOW: '#FCCC53'
 }
 export const FONT_FAMILY = 'Brandon Text'
+export const FONT_SIZE = {
+  SMALL: 12,
+  MEDIUM: 18,
+  LARGE: 24
+}
 export const GUTTER = 30
 export const LAYOUT = {
+  BODY_WIDTH_PERCENT: 62,
   HEIGHT: Dimensions.get('window').height,
   WIDTH: Dimensions.get('window').width
 }
@@ -27,6 +33,10 @@ export const TOAST = {
   ALERT: 'alert',
   INFO: 'info',
   SUCCESS: 'success'
+}
+export const ZINDEX = {
+  SPLASH: 2,
+  TOAST: 3
 }
 
 // client

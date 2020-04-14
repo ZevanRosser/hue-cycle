@@ -1,11 +1,11 @@
-import {COLORS, FONT_FAMILY} from 'constants'
+import {COLORS, FONT_FAMILY, FONT_SIZE} from 'constants'
 import React from 'react'
 import styled from 'styled-components/native'
 
 const HeadlineText = styled.Text`
   color: ${COLORS.WHITE};
   font-family: ${FONT_FAMILY};
-  font-size: 18px;
+  font-size: ${FONT_SIZE.MEDIUM}px;
   font-weight: bold;
 `
 

@@ -11,12 +11,12 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		96E12DB5B425EC2666F1ABDE /* libPods-HueCycle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC92D354910BD132EEF2ACE /* libPods-HueCycle.a */; };
-		66992343FA534175A4861F0B /* BrandonText-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFFB349845A743DD8E4F1D49 /* BrandonText-Bold.otf */; };
-		9E9093CDA9FD4EF99CA88E7B /* BrandonText-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D363123D027B4FFEA637BA38 /* BrandonText-Light.otf */; };
-		988618B7F43547E7B2A6D2AF /* BrandonText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F41B0FA9CDF844758B9EB7B5 /* BrandonText-Regular.otf */; };
 		443D570FA1B547FDBE25480D /* BrandonText-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C9B246F28B4247D3A0963C5B /* BrandonText-RegularItalic.otf */; };
 		62D054B734574341B14624D4 /* BrandonText-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A28DFBC3DB04DD1BD4B0AB9 /* BrandonText-Thin.otf */; };
+		66992343FA534175A4861F0B /* BrandonText-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFFB349845A743DD8E4F1D49 /* BrandonText-Bold.otf */; };
+		96E12DB5B425EC2666F1ABDE /* libPods-HueCycle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC92D354910BD132EEF2ACE /* libPods-HueCycle.a */; };
+		988618B7F43547E7B2A6D2AF /* BrandonText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F41B0FA9CDF844758B9EB7B5 /* BrandonText-Regular.otf */; };
+		9E9093CDA9FD4EF99CA88E7B /* BrandonText-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D363123D027B4FFEA637BA38 /* BrandonText-Light.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,19 +31,19 @@
 		14774BDE585918E8B8306051 /* Pods-HueCycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HueCycle.debug.xcconfig"; path = "Target Support Files/Pods-HueCycle/Pods-HueCycle.debug.xcconfig"; sourceTree = "<group>"; };
 		1DC4C8CD57D8DB815DC3C359 /* Pods-HueCycle-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HueCycle-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-HueCycle-tvOS/Pods-HueCycle-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		39AC2BBE7F0597F729813920 /* Pods-HueCycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HueCycle.release.xcconfig"; path = "Target Support Files/Pods-HueCycle/Pods-HueCycle.release.xcconfig"; sourceTree = "<group>"; };
+		3A28DFBC3DB04DD1BD4B0AB9 /* BrandonText-Thin.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "BrandonText-Thin.otf"; path = "../assets/fonts/BrandonText-Thin.otf"; sourceTree = "<group>"; };
 		5DC92D354910BD132EEF2ACE /* libPods-HueCycle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HueCycle.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77000EA0A8EA4E59795A8461 /* Pods-HueCycle-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HueCycle-tvOS.release.xcconfig"; path = "Target Support Files/Pods-HueCycle-tvOS/Pods-HueCycle-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		778DBEB41BBA864FD8A8525F /* Pods-HueCycleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HueCycleTests.release.xcconfig"; path = "Target Support Files/Pods-HueCycleTests/Pods-HueCycleTests.release.xcconfig"; sourceTree = "<group>"; };
 		7B1FCDD056E26734D63ED0FB /* Pods-HueCycle-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HueCycle-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-HueCycle-tvOSTests/Pods-HueCycle-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BFFB349845A743DD8E4F1D49 /* BrandonText-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "BrandonText-Bold.otf"; path = "../assets/fonts/BrandonText-Bold.otf"; sourceTree = "<group>"; };
+		C9B246F28B4247D3A0963C5B /* BrandonText-RegularItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "BrandonText-RegularItalic.otf"; path = "../assets/fonts/BrandonText-RegularItalic.otf"; sourceTree = "<group>"; };
+		D363123D027B4FFEA637BA38 /* BrandonText-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "BrandonText-Light.otf"; path = "../assets/fonts/BrandonText-Light.otf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F2450632EE4BA9E1FC057FC6 /* Pods-HueCycleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HueCycleTests.debug.xcconfig"; path = "Target Support Files/Pods-HueCycleTests/Pods-HueCycleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F40BEFD6CA6B9E787D561D29 /* Pods-HueCycle-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HueCycle-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-HueCycle-tvOSTests/Pods-HueCycle-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		BFFB349845A743DD8E4F1D49 /* BrandonText-Bold.otf */ = {isa = PBXFileReference; name = "BrandonText-Bold.otf"; path = "../assets/fonts/BrandonText-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		D363123D027B4FFEA637BA38 /* BrandonText-Light.otf */ = {isa = PBXFileReference; name = "BrandonText-Light.otf"; path = "../assets/fonts/BrandonText-Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		F41B0FA9CDF844758B9EB7B5 /* BrandonText-Regular.otf */ = {isa = PBXFileReference; name = "BrandonText-Regular.otf"; path = "../assets/fonts/BrandonText-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		C9B246F28B4247D3A0963C5B /* BrandonText-RegularItalic.otf */ = {isa = PBXFileReference; name = "BrandonText-RegularItalic.otf"; path = "../assets/fonts/BrandonText-RegularItalic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		3A28DFBC3DB04DD1BD4B0AB9 /* BrandonText-Thin.otf */ = {isa = PBXFileReference; name = "BrandonText-Thin.otf"; path = "../assets/fonts/BrandonText-Thin.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F41B0FA9CDF844758B9EB7B5 /* BrandonText-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "BrandonText-Regular.otf"; path = "../assets/fonts/BrandonText-Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +112,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		A31EBDEB466E4808AB5907B4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BFFB349845A743DD8E4F1D49 /* BrandonText-Bold.otf */,
+				D363123D027B4FFEA637BA38 /* BrandonText-Light.otf */,
+				F41B0FA9CDF844758B9EB7B5 /* BrandonText-Regular.otf */,
+				C9B246F28B4247D3A0963C5B /* BrandonText-RegularItalic.otf */,
+				3A28DFBC3DB04DD1BD4B0AB9 /* BrandonText-Thin.otf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		F0B438BD3328D4A598D6C3DA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,19 +140,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		A31EBDEB466E4808AB5907B4 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				BFFB349845A743DD8E4F1D49 /* BrandonText-Bold.otf */,
-				D363123D027B4FFEA637BA38 /* BrandonText-Light.otf */,
-				F41B0FA9CDF844758B9EB7B5 /* BrandonText-Regular.otf */,
-				C9B246F28B4247D3A0963C5B /* BrandonText-RegularItalic.otf */,
-				3A28DFBC3DB04DD1BD4B0AB9 /* BrandonText-Thin.otf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,6 +153,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				D25223B777A217E9BAF35063 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -247,6 +248,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D25223B777A217E9BAF35063 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HueCycle/Pods-HueCycle-resources.sh",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Feather.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Brands.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Regular.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Solid.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Fontisto.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Foundation.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Ionicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCommunityIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HueCycle/Pods-HueCycle-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {

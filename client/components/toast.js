@@ -1,28 +1,49 @@
-import {ANIMATION_TIMINGS, COLORS, FONT_FAMILY, TOAST} from 'constants'
+import {
+  ANIMATION_TIMINGS,
+  COLORS,
+  FONT_FAMILY,
+  FONT_SIZE,
+  TOAST
+} from 'constants'
+import Icon from 'react-native-vector-icons/FontAwesome'
 import React, {useEffect, useState} from 'react'
 import {Animated} from 'react-native'
 import styled from 'styled-components/native'
 
 const TOAST_TIMING = 5000
 
-const alertColorMap = {
+const ALERT_COLOR_MAP = {
   [TOAST.ALERT]: COLORS.RED,
-  [TOAST.INFO]: COLORS.GREEN,
-  [TOAST.SUCCESS]: COLORS.BLUE
+  [TOAST.INFO]: COLORS.BLUE,
+  [TOAST.SUCCESS]: COLORS.GREEN
+}
+
+const ALERT_ICON_MAP = {
+  [TOAST.ALERT]: 'exclamation-circle',
+  [TOAST.INFO]: 'info-circle',
+  [TOAST.SUCCESS]: 'check-circle'
 }
 
 const StyledToast = styled(props => <Animated.View {...props} />)`
   align-items: center;
-  background-color: ${({type}) => alertColorMap[type]};
+  background-color: ${({type}) => ALERT_COLOR_MAP[type]};
   border-radius: 30px;
+  flex-direction: row;
+  flex: 1;
   margin-top: 10px;
-  padding: 5px 10px;
+  padding: 5px 12px;
+`
+
+const ToastIcon = styled(props => <Icon {...props} />)`
+  color: ${COLORS.WHITE};
+  font-size: ${FONT_SIZE.MEDIUM * 1.1}px;
+  margin-right: 5px;
 `
 
 const ToastMessage = styled.Text`
   color: ${COLORS.WHITE};
   font-family: ${FONT_FAMILY};
-  font-size: 15px;
+  font-size: ${FONT_SIZE.MEDIUM}px;
   font-weight: bold;
   text-align: center;
 `
@@ -58,6 +79,7 @@ export default ({message, type, onDismiss}) => {
           }
         ]
       }}>
+      <ToastIcon name={ALERT_ICON_MAP[type]} />
       <ToastMessage>{message}</ToastMessage>
     </StyledToast>
   )

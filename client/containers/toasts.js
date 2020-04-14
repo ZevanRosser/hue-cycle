@@ -1,6 +1,6 @@
 import {removeToast} from 'actions'
 import {Toast} from 'components'
-import {GUTTER} from 'constants'
+import {GUTTER, ZINDEX} from 'constants'
 import React from 'react'
 import {withState} from 'state'
 import styled from 'styled-components/native'
@@ -12,6 +12,7 @@ const ToastsContainer = styled.View`
   justify-content: flex-end;
   position: absolute;
   width: 100%;
+  z-index: ${ZINDEX.TOAST};
 `
 
 export default () => {

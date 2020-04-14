@@ -2,15 +2,8 @@ import React, {createContext, useContext, useReducer} from 'react'
 import reducer from 'reducer'
 
 const initialState = {
-  // is the hue bridge connected?
   connected: false,
-  // has the app been initialized?
-  initialized: false,
-  // is the app ready to accept interactions?
-  interactable: false,
-  // is the app loading?
   loading: true,
-  // notifications to show the user
   toasts: []
 }
 

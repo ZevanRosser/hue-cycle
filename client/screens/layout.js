@@ -1,6 +1,6 @@
-import {initialize, setInteractable} from 'actions'
+import {initialize, setLoading} from 'actions'
 import {Headline, Section} from 'components'
-import {Body, Header, Splash, Toasts} from 'containers'
+import {Body, ColorPicker, Splash, Toasts} from 'containers'
 import React, {useEffect} from 'react'
 import {withState} from 'state'
 import styled from 'styled-components/native'
@@ -18,8 +18,8 @@ export default () => {
 
   return (
     <LayoutContainer>
-      <Splash onAnimationComplete={() => dispatch(setInteractable(true))} />
-      <Header />
+      <Splash onAnimationComplete={() => dispatch(setLoading(true))} />
+      <ColorPicker />
       <Body>
         <Section>
           <Headline>Colors</Headline>

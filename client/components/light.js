@@ -3,10 +3,10 @@ import {Animated} from 'react-native'
 import styled from 'styled-components/native'
 
 const StyledImage = styled(props => <Animated.Image {...props} />)`
-  height: 512px;
-  width: 149px;
+  height: 100%;
+  width: 100%;
 `
 
 export default ({style}) => (
-  <StyledImage source={require('assets/images/lamp.png')} style={style} />
+  <StyledImage source={require('assets/images/light.png')} style={style} />
 )
