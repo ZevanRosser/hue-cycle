@@ -1,3 +1,4 @@
+export setColors from './set-colors'
 export setConnected from './set-connected'
 export setLoading from './set-loading'
 export setToasts from './set-toasts'

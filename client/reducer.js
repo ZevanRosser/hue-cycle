@@ -2,6 +2,11 @@ import {TYPES} from 'actions'
 
 export default (state, {type, payload}) => {
   switch (type) {
+    case TYPES.SET_COLORS:
+      return {
+        ...state,
+        colors: payload
+      }
     case TYPES.SET_CONNECTED:
       return {
         ...state,

@@ -1,3 +1,4 @@
+export Color from './color'
 export Headline from './headline'
 export Light from './light'
 export Section from './section'

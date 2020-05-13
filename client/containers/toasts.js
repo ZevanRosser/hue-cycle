@@ -16,7 +16,7 @@ const ToastsContainer = styled.View`
 `
 
 export default () => {
-  const {toasts, dispatch} = withState()
+  const {toasts = [], dispatch} = withState()
 
   return (
     <ToastsContainer>

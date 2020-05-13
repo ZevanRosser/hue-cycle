@@ -22,7 +22,7 @@ const SPLASH_POINTS = {
 
 const SplashContainer = styled(props => <Animated.View {...props} />)`
   align-items: center;
-  background-color: ${COLORS.DARK_GRAY};
+  background-color: ${COLORS.BLACK};
   height: 100%;
   justify-content: center;
   left: 0;

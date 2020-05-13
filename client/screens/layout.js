@@ -1,6 +1,6 @@
 import {initialize, setLoading} from 'actions'
 import {Headline, Section} from 'components'
-import {Body, ColorPicker, Splash, Toasts} from 'containers'
+import {Body, ColorPicker, Colors, Splash, Toasts} from 'containers'
 import React, {useEffect} from 'react'
 import {withState} from 'state'
 import styled from 'styled-components/native'
@@ -23,6 +23,7 @@ export default () => {
       <Body>
         <Section>
           <Headline>Colors</Headline>
+          <Colors />
         </Section>
         <Section>
           <Headline>Lights</Headline>

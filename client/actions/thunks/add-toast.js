@@ -1,7 +1,7 @@
 import {setToasts} from 'actions'
 import uuid from 'uuid'
 
-export default (message, type) => (dispatch, getState) => {
+export default (message, type) => (dispatch, getState) =>
   dispatch(
     setToasts([
       ...getState().toasts,
@@ -12,4 +12,3 @@ export default (message, type) => (dispatch, getState) => {
       }
     ])
   )
-}
