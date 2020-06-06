@@ -1,5 +1,5 @@
 export Body from './body'
-export ColorPicker from './color-picker'
-export Colors from './colors'
+export ColorsPreview from './colors-preview'
+export ColorsSelector from './colors-selector'
 export Splash from './splash'
 export Toasts from './toasts'

@@ -1,9 +1,9 @@
-import {addToast, setConnected, setLoading} from 'actions'
+import {addToast, setConnected, setLoading, setInitialized} from 'actions'
 import {TOAST} from 'constants'
 import {Client} from 'models'
 
 export default () => async dispatch => {
-  await dispatch(setLoading(true))
+  dispatch(setLoading(true))
 
   try {
     const client = await Client.createClientContext()
@@ -14,7 +14,7 @@ export default () => async dispatch => {
     await dispatch(addToast(message, TOAST.ALERT))
   } finally {
     setTimeout(async () => {
-      await dispatch(setLoading(false))
+      await dispatch(setInitialized(true))
     }, 2000)
   }
 }

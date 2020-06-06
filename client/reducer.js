@@ -12,6 +12,11 @@ export default (state, {type, payload}) => {
         ...state,
         connected: payload
       }
+    case TYPES.SET_INITIALIZED:
+      return {
+        ...state,
+        initialized: payload
+      }
     case TYPES.SET_LOADING:
       return {
         ...state,

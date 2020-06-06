@@ -5,7 +5,7 @@ import React from 'react'
 import {withState} from 'state'
 import styled from 'styled-components/native'
 
-const ColorsContainer = styled.View`
+const ColorsSelectorContainer = styled.View`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -16,7 +16,7 @@ export default () => {
   const {colors = [], dispatch} = withState()
 
   return (
-    <ColorsContainer>
+    <ColorsSelectorContainer>
       {colors.map(({color, selected}) => (
         <Color
           color={color}
@@ -25,6 +25,6 @@ export default () => {
           selected={selected}
         />
       ))}
-    </ColorsContainer>
+    </ColorsSelectorContainer>
   )
 }

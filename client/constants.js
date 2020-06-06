@@ -8,16 +8,16 @@ export const ANIMATION_TIMINGS = {
 }
 export const BODY_HEIGHT_PERCENT = 62
 export const COLORS = {
-  BEIGE: '#C3A77B',
   BLACK: '#000000',
   BLUE: '#3B82F6',
   GRAY: '#5A5A5E',
   GREEN: '#67CE69',
   LIGHT_BLUE: '#89C1F9',
-  LIGHT_PINK: '#E2B7B0',
+  LIGHT_PINK: '#EE9FBE',
+  LIGHT_PURPLE: '#AE80F2',
   LIGHT_RED: '#EB5D7A',
-  ORANGE: '#F1A33C',
-  PINK: '#C983EE',
+  ORANGE: '#FF8F06',
+  PINK: '#F049CB',
   PURPLE: '#5D5CDE',
   RED: '#EB5545',
   WHITE: '#FFFFFF',
@@ -54,23 +54,27 @@ export const INITIAL_STATE = {
       selected: true
     },
     {
+      color: COLORS.LIGHT_RED,
+      selected: false
+    },
+    {
       color: COLORS.ORANGE,
       selected: false
     },
     {
       color: COLORS.YELLOW,
-      selected: true
+      selected: false
     },
     {
       color: COLORS.GREEN,
       selected: false
     },
     {
-      color: COLORS.LIGHT_BLUE,
-      selected: false
+      color: COLORS.BLUE,
+      selected: true
     },
     {
-      color: COLORS.BLUE,
+      color: COLORS.LIGHT_BLUE,
       selected: false
     },
     {
@@ -78,24 +82,21 @@ export const INITIAL_STATE = {
       selected: false
     },
     {
-      color: COLORS.LIGHT_RED,
+      color: COLORS.LIGHT_PURPLE,
       selected: false
     },
     {
       color: COLORS.PINK,
-      selected: true
+      selected: false
     },
     {
       color: COLORS.LIGHT_PINK,
       selected: false
-    },
-    {
-      color: COLORS.BEIGE,
-      selected: false
     }
   ],
   connected: false,
-  loading: true,
+  initialized: false,
+  loading: false,
   toasts: []
 }
 

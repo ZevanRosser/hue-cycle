@@ -1,8 +1,7 @@
-import {Light} from 'components'
+import {AnimatedGradient, Light} from 'components'
 import {ANIMATION_TIMINGS, COLORS, ZINDEX} from 'constants'
 import React, {useEffect, useState} from 'react'
 import {Animated} from 'react-native'
-import AnimatedLinearGradient from 'react-native-animated-linear-gradient'
 import {withState} from 'state'
 import styled from 'styled-components/native'
 import MaskedView from '@react-native-community/masked-view'
@@ -14,11 +13,6 @@ const SPLASH_GRADIENT = [
   COLORS.BLUE,
   COLORS.PURPLE
 ]
-
-const SPLASH_POINTS = {
-  start: {x: 0, y: 0.25},
-  end: {x: 0.5, y: 1}
-}
 
 const SplashContainer = styled(props => <Animated.View {...props} />)`
   align-items: center;
@@ -41,19 +35,11 @@ const LightMaskedView = styled(props => <MaskedView {...props} />)`
 `
 
 export default ({onAnimationComplete}) => {
-  const {loading} = withState()
+  const {initialized} = withState()
   const [anim] = useState(new Animated.Value(1))
-  const [isVisible, setIsVisible] = useState(true)
 
   useEffect(() => {
-    Animated.timing(anim, {
-      toValue: 1,
-      duration: ANIMATION_TIMINGS.MEDIUM
-    }).start()
-  }, [])
-
-  useEffect(() => {
-    if (loading) {
+    if (!initialized) {
       return
     }
 
@@ -61,24 +47,13 @@ export default ({onAnimationComplete}) => {
       toValue: 0,
       duration: ANIMATION_TIMINGS.SLOW,
       useNativeDriver: true
-    }).start(() => {
-      setIsVisible(false)
-      onAnimationComplete()
-    })
-  }, [loading])
-
-  if (!isVisible) {
-    return null
-  }
+    }).start(onAnimationComplete)
+  }, [initialized])
 
   return (
     <SplashContainer style={{opacity: anim}}>
       <LightMaskedView maskElement={<Light />}>
-        <AnimatedLinearGradient
-          customColors={SPLASH_GRADIENT}
-          points={SPLASH_POINTS}
-          speed={1000}
-        />
+        <AnimatedGradient colors={SPLASH_GRADIENT} speed={500} />
       </LightMaskedView>
     </SplashContainer>
   )

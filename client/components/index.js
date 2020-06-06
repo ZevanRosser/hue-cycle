@@ -1,3 +1,4 @@
+export AnimatedGradient from './animated-gradient'
 export Color from './color'
 export Headline from './headline'
 export Light from './light'

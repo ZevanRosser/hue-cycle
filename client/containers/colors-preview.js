@@ -1,12 +1,12 @@
+import {AnimatedGradient} from 'components'
 import {BODY_HEIGHT_PERCENT, GUTTER} from 'constants'
 import React from 'react'
-import AnimatedLinearGradient from 'react-native-animated-linear-gradient'
 import {withState} from 'state'
 import styled from 'styled-components/native'
 
-const ColorPickerContainer = styled.View`
+const ColorsPreviewContainer = styled.View`
   top: 0;
-  height: ${100 - BODY_HEIGHT_PERCENT + GUTTER / 3}%;
+  height: 100%;
   left: 0;
   position: absolute;
   right: 0;
@@ -20,8 +20,8 @@ export default () => {
     .map(({color}) => color)
 
   return (
-    <ColorPickerContainer>
-      <AnimatedLinearGradient customColors={selectedColors} speed={3000} />
-    </ColorPickerContainer>
+    <ColorsPreviewContainer>
+      <AnimatedGradient colors={selectedColors} speed={3000} />
+    </ColorsPreviewContainer>
   )
 }

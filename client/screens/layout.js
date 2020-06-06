@@ -1,6 +1,6 @@
 import {initialize, setLoading} from 'actions'
 import {Headline, Section} from 'components'
-import {Body, ColorPicker, Colors, Splash, Toasts} from 'containers'
+import {Body, ColorsPreview, ColorsSelector, Splash, Toasts} from 'containers'
 import React, {useEffect} from 'react'
 import {withState} from 'state'
 import styled from 'styled-components/native'
@@ -10,20 +10,22 @@ const LayoutContainer = styled.View`
 `
 
 export default () => {
-  const {initialized, dispatch} = withState()
+  const {dispatch, loading} = withState()
 
   useEffect(() => {
     dispatch(initialize())
-  }, [initialized])
+  }, [])
 
   return (
     <LayoutContainer>
-      <Splash onAnimationComplete={() => dispatch(setLoading(true))} />
-      <ColorPicker />
+      {loading && (
+        <Splash onAnimationComplete={() => dispatch(setLoading(false))} />
+      )}
+      <ColorsPreview />
       <Body>
         <Section>
           <Headline>Colors</Headline>
-          <Colors />
+          <ColorsSelector />
         </Section>
         <Section>
           <Headline>Lights</Headline>
