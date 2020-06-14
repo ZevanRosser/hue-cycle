@@ -6,7 +6,7 @@ export const ANIMATION_TIMINGS = {
   MEDIUM: 250,
   SLOW: 500
 }
-export const BODY_HEIGHT_PERCENT = 62
+export const BODY_HEIGHT_PERCENT = 65
 export const COLORS = {
   BLACK: '#000000',
   BLUE: '#3B82F6',
@@ -63,7 +63,7 @@ export const INITIAL_STATE = {
     },
     {
       color: COLORS.YELLOW,
-      selected: false
+      selected: true
     },
     {
       color: COLORS.GREEN,
@@ -97,6 +97,7 @@ export const INITIAL_STATE = {
   connected: false,
   initialized: false,
   loading: false,
+  scroll: 0,
   toasts: []
 }
 

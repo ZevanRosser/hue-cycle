@@ -22,6 +22,11 @@ export default (state, {type, payload}) => {
         ...state,
         loading: payload
       }
+    case TYPES.SET_SCROLL:
+      return {
+        ...state,
+        scroll: payload
+      }
     case TYPES.SET_TOASTS:
       return {
         ...state,

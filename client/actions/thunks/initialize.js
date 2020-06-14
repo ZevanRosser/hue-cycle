@@ -14,7 +14,8 @@ export default () => async dispatch => {
     await dispatch(addToast(message, TOAST.ALERT))
   } finally {
     setTimeout(async () => {
-      await dispatch(setInitialized(true))
-    }, 2000)
+      dispatch(setLoading(false))
+      dispatch(setInitialized(true))
+    }, 5000)
   }
 }

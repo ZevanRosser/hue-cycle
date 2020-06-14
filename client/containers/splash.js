@@ -53,7 +53,7 @@ export default ({onAnimationComplete}) => {
   return (
     <SplashContainer style={{opacity: anim}}>
       <LightMaskedView maskElement={<Light />}>
-        <AnimatedGradient colors={SPLASH_GRADIENT} speed={500} />
+        <AnimatedGradient colors={SPLASH_GRADIENT} speed={1000} />
       </LightMaskedView>
     </SplashContainer>
   )

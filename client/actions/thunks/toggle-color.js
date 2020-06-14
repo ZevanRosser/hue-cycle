@@ -11,6 +11,8 @@ export default colorToToggle => async (dispatch, getState) => {
 
   // need at least 2 colors to have a gradient
   if (selectedCount < 2) {
+    ReactNativeHapticFeedback.trigger('notificationError')
+
     return
   }
 
