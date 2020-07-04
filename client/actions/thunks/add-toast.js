@@ -1,5 +1,5 @@
-import {setToasts} from 'actions'
 import uuid from 'uuid'
+import setToasts from '../set-toasts'
 
 export default (message, type) => (dispatch, getState) =>
   dispatch(

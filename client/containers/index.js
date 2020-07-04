@@ -1,5 +1,2 @@
-export Body from './body'
-export ColorsPreview from './colors-preview'
-export ColorsSelector from './colors-selector'
-export Splash from './splash'
+export * as Navigation from './navigation'
 export Toasts from './toasts'

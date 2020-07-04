@@ -1,6 +1,6 @@
-import {TYPES} from 'actions'
+import {SET_TOASTS} from './types'
 
-export default (payload = []) => ({
-  type: TYPES.SET_TOASTS,
+export default payload => ({
+  type: SET_TOASTS,
   payload
 })

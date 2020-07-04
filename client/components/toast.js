@@ -6,7 +6,7 @@ import {
   TOAST
 } from 'constants'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useMemo, useState} from 'react'
 import {Animated} from 'react-native'
 import styled from 'styled-components/native'
 
@@ -49,16 +49,24 @@ const ToastMessage = styled.Text`
 `
 
 export default ({message, type, onDismiss}) => {
-  const [fadeAnim] = useState(new Animated.Value(0))
+  const [outAnim] = useState(new Animated.Value(0))
+  const toastTranslateY = useMemo(
+    () =>
+      outAnim.interpolate({
+        inputRange: [0, 1],
+        outputRange: [30, 0]
+      }),
+    []
+  )
 
   useEffect(() => {
     Animated.sequence([
-      Animated.timing(fadeAnim, {
+      Animated.timing(outAnim, {
         toValue: 1,
         duration: ANIMATION_TIMINGS.FAST
       }),
       Animated.delay(TOAST_TIMING),
-      Animated.timing(fadeAnim, {
+      Animated.timing(outAnim, {
         toValue: 0,
         duration: ANIMATION_TIMINGS.FAST
       })
@@ -69,13 +77,10 @@ export default ({message, type, onDismiss}) => {
     <StyledToast
       type={type}
       style={{
-        opacity: fadeAnim,
+        opacity: outAnim,
         transform: [
           {
-            translateY: fadeAnim.interpolate({
-              inputRange: [0, 1],
-              outputRange: [30, 0]
-            })
+            translateY: toastTranslateY
           }
         ]
       }}>

@@ -2,11 +2,11 @@ import {Dimensions} from 'react-native'
 
 // ui
 export const ANIMATION_TIMINGS = {
+  XFAST: 50,
   FAST: 125,
   MEDIUM: 250,
   SLOW: 500
 }
-export const BODY_HEIGHT_PERCENT = 65
 export const COLORS = {
   BLACK: '#000000',
   BLUE: '#3B82F6',
@@ -20,6 +20,7 @@ export const COLORS = {
   PINK: '#F049CB',
   PURPLE: '#5D5CDE',
   RED: '#EB5545',
+  TRANSPARENT_GRAY: 'rgba(255, 255, 255, 0.5)',
   WHITE: '#FFFFFF',
   YELLOW: '#FCCC53'
 }
@@ -28,12 +29,24 @@ export const FONT_FAMILY = 'Brandon Text'
 export const FONT_SIZE = {
   SMALL: 12,
   MEDIUM: 18,
-  LARGE: 24
+  LARGE: 24,
+  XLARGE: 50
 }
 export const GUTTER = 30
 export const LAYOUT = {
   HEIGHT: Dimensions.get('window').height,
   WIDTH: Dimensions.get('window').width
+}
+export const SCENE_BODY_HEIGHT_PERCENT = 65
+export const SCENE_HEADER_EXPANDED_HEIGHT =
+  LAYOUT.HEIGHT * ((100 - SCENE_BODY_HEIGHT_PERCENT) / 100)
+export const SCENE_HEADER_COLLAPSED_HEIGHT = 120
+export const SCENE_NAME_MAX_LENGTH = 15
+export const SCREENS = {
+  SCENE: 'scene',
+  SCENES: 'scenes',
+  SETTINGS: 'settings',
+  SETUP: 'setup'
 }
 export const SPACE_AROUND_GUTTER = 3
 export const TOAST = {
@@ -41,72 +54,86 @@ export const TOAST = {
   INFO: 'info',
   SUCCESS: 'success'
 }
+export const TOGGLE_BUTTON_SIZE = 75
 export const ZINDEX = {
-  SPLASH: 2,
-  TOAST: 3
+  BODY: 1,
+  HEADER: 2,
+  SPLASH: 3,
+  TOAST: 4
 }
 
 // state
 export const INITIAL_STATE = {
-  colors: [
-    {
-      color: COLORS.RED,
-      selected: true
-    },
-    {
-      color: COLORS.LIGHT_RED,
-      selected: false
-    },
-    {
-      color: COLORS.ORANGE,
-      selected: false
-    },
-    {
-      color: COLORS.YELLOW,
-      selected: true
-    },
-    {
-      color: COLORS.GREEN,
-      selected: false
-    },
-    {
-      color: COLORS.BLUE,
-      selected: true
-    },
-    {
-      color: COLORS.LIGHT_BLUE,
-      selected: false
-    },
-    {
-      color: COLORS.PURPLE,
-      selected: false
-    },
-    {
-      color: COLORS.LIGHT_PURPLE,
-      selected: false
-    },
-    {
-      color: COLORS.PINK,
-      selected: false
-    },
-    {
-      color: COLORS.LIGHT_PINK,
-      selected: false
-    }
-  ],
   connected: false,
   initialized: false,
   loading: false,
-  scroll: 0,
+  navigation: {
+    activeScreen: null,
+    previousScreen: null
+  },
+  scenes: [
+    {
+      active: false,
+      behavior: {},
+      colors: [
+        {
+          color: COLORS.RED,
+          selected: true
+        },
+        {
+          color: COLORS.LIGHT_RED,
+          selected: false
+        },
+        {
+          color: COLORS.ORANGE,
+          selected: false
+        },
+        {
+          color: COLORS.YELLOW,
+          selected: true
+        },
+        {
+          color: COLORS.GREEN,
+          selected: false
+        },
+        {
+          color: COLORS.BLUE,
+          selected: true
+        },
+        {
+          color: COLORS.LIGHT_BLUE,
+          selected: false
+        },
+        {
+          color: COLORS.PURPLE,
+          selected: false
+        },
+        {
+          color: COLORS.LIGHT_PURPLE,
+          selected: false
+        },
+        {
+          color: COLORS.PINK,
+          selected: false
+        },
+        {
+          color: COLORS.LIGHT_PINK,
+          selected: false
+        }
+      ],
+      id: 1,
+      lights: [],
+      name: 'Scene 1',
+      selected: true
+    }
+  ],
   toasts: []
 }
 
 // client
 export const STORAGE_KEYS = {
-  ACCESS_TOKEN: 'access_token',
   CLIENT_ID: 'client_id',
-  CLIENT_SECRET: 'client_secret',
-  COLORS: 'colors'
+  CLIENT_SECRET: 'client_secret'
 }
 
 // api

@@ -2,11 +2,6 @@ import {TYPES} from 'actions'
 
 export default (state, {type, payload}) => {
   switch (type) {
-    case TYPES.SET_COLORS:
-      return {
-        ...state,
-        colors: payload
-      }
     case TYPES.SET_CONNECTED:
       return {
         ...state,
@@ -22,10 +17,15 @@ export default (state, {type, payload}) => {
         ...state,
         loading: payload
       }
-    case TYPES.SET_SCROLL:
+    case TYPES.SET_NAVIGATION:
       return {
         ...state,
-        scroll: payload
+        navigation: payload
+      }
+    case TYPES.SET_SCENES:
+      return {
+        ...state,
+        scenes: payload
       }
     case TYPES.SET_TOASTS:
       return {

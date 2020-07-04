@@ -17,6 +17,7 @@ const SPLASH_GRADIENT = [
 const SplashContainer = styled(props => <Animated.View {...props} />)`
   align-items: center;
   background-color: ${COLORS.BLACK};
+  bottom: 0;
   height: 100%;
   justify-content: center;
   left: 0;
@@ -28,9 +29,7 @@ const SplashContainer = styled(props => <Animated.View {...props} />)`
 `
 
 const LightMaskedView = styled(props => <MaskedView {...props} />)`
-  align-items: center;
   height: 123px;
-  justify-content: center;
   width: 70px;
 `
 

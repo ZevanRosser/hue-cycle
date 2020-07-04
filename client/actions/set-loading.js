@@ -1,6 +1,6 @@
-import {TYPES} from 'actions'
+import {SET_LOADING} from './types'
 
-export default (payload = false) => ({
-  type: TYPES.SET_LOADING,
+export default payload => ({
+  type: SET_LOADING,
   payload
 })
