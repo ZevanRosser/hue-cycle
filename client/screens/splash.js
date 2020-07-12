@@ -1,18 +1,10 @@
-import {AnimatedGradient, Light} from 'components'
+import {Animated, Easing} from 'react-native'
 import {ANIMATION_TIMINGS, COLORS, ZINDEX} from 'constants'
-import React, {useEffect, useState} from 'react'
-import {Animated} from 'react-native'
 import {withState} from 'state'
-import styled from 'styled-components/native'
+import LottieView from 'lottie-react-native'
 import MaskedView from '@react-native-community/masked-view'
-
-const SPLASH_GRADIENT = [
-  COLORS.RED,
-  COLORS.YELLOW,
-  COLORS.GREEN,
-  COLORS.BLUE,
-  COLORS.PURPLE
-]
+import React, {useEffect, useState} from 'react'
+import styled from 'styled-components/native'
 
 const SplashContainer = styled(props => <Animated.View {...props} />)`
   align-items: center;
@@ -35,14 +27,32 @@ const LightMaskedView = styled(props => <MaskedView {...props} />)`
 
 export default ({onAnimationComplete}) => {
   const {initialized} = withState()
-  const [anim] = useState(new Animated.Value(1))
+  const [anim] = useState(new Animated.Value(0))
+  const [fadeAnim] = useState(new Animated.Value(1))
+
+  useEffect(() => {
+    Animated.loop(
+      Animated.timing(anim, {
+        toValue: 1,
+        duration: ANIMATION_TIMINGS.XSLOW,
+        easing: Easing.linear,
+        useNativeDriver: true
+      }),
+      Animated.timing(anim, {
+        toValue: 0,
+        duration: ANIMATION_TIMINGS.XSLOW,
+        easing: Easing.linear,
+        useNativeDriver: true
+      })
+    ).start()
+  }, [])
 
   useEffect(() => {
     if (!initialized) {
       return
     }
 
-    Animated.timing(anim, {
+    Animated.timing(fadeAnim, {
       toValue: 0,
       duration: ANIMATION_TIMINGS.SLOW,
       useNativeDriver: true
@@ -50,10 +60,8 @@ export default ({onAnimationComplete}) => {
   }, [initialized])
 
   return (
-    <SplashContainer style={{opacity: anim}}>
-      <LightMaskedView maskElement={<Light />}>
-        <AnimatedGradient colors={SPLASH_GRADIENT} speed={1000} />
-      </LightMaskedView>
+    <SplashContainer style={{opacity: fadeAnim}}>
+      <LottieView source={require('lottie/splash.json')} progress={anim} />
     </SplashContainer>
   )
 }

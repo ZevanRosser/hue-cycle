@@ -5,11 +5,13 @@ export const ANIMATION_TIMINGS = {
   XFAST: 50,
   FAST: 125,
   MEDIUM: 250,
-  SLOW: 500
+  SLOW: 500,
+  XSLOW: 1500
 }
 export const COLORS = {
   BLACK: '#000000',
   BLUE: '#3B82F6',
+  DARK_GRAY: '#222',
   GRAY: '#5A5A5E',
   GREEN: '#67CE69',
   LIGHT_BLUE: '#89C1F9',
@@ -41,7 +43,7 @@ export const SCENE_BODY_HEIGHT_PERCENT = 65
 export const SCENE_HEADER_EXPANDED_HEIGHT =
   LAYOUT.HEIGHT * ((100 - SCENE_BODY_HEIGHT_PERCENT) / 100)
 export const SCENE_HEADER_COLLAPSED_HEIGHT = 120
-export const SCENE_NAME_MAX_LENGTH = 15
+export const SCENE_NAME_MAX_LENGTH = 12
 export const SCREENS = {
   SCENE: 'scene',
   SCENES: 'scenes',

@@ -13,6 +13,7 @@ module.exports = {
           components: './components',
           containers: './containers',
           constants: './constants',
+          lottie: './lottie',
           models: './models',
           reducer: './reducer',
           screens: './screens',

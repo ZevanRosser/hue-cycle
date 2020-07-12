@@ -1,3 +1,4 @@
+import {SceneHeaderActions} from 'components'
 import {
   ANIMATION_TIMINGS,
   COLORS,
@@ -8,23 +9,11 @@ import {
   SCENE_HEADER_COLLAPSED_HEIGHT,
   SCENE_NAME_MAX_LENGTH
 } from 'constants'
-import Icon from 'react-native-vector-icons/FontAwesome'
 import React, {useMemo, useEffect, useState} from 'react'
 import {TextInput} from 'react-native'
-import {Animated, Switch, TouchableWithoutFeedback} from 'react-native'
+import {Animated} from 'react-native'
 import styled from 'styled-components/native'
 import AnimatedGradient from './animated-gradient'
-
-const BackButton = styled.View`
-  left: ${GUTTER / 2}px;
-  position: absolute;
-  top: ${GUTTER * 2}px;
-`
-
-const BackIcon = styled(props => <Icon {...props} />)`
-  color: ${COLORS.WHITE};
-  font-size: 30px;
-`
 
 const Headline = styled(props => <Animated.Text {...props} />)`
   color: ${COLORS.WHITE};
@@ -34,7 +23,7 @@ const Headline = styled(props => <Animated.Text {...props} />)`
 
 const HeadlineContainer = styled(props => <Animated.View {...props} />)`
   align-items: center;
-  bottom: ${GUTTER * 0.75}px;
+  bottom: ${GUTTER * 0.85}px;
   flex-direction: row;
   flex: 1;
   position: absolute;
@@ -61,10 +50,8 @@ const StyledAnimatedGradient = styled(props => <AnimatedGradient {...props} />)`
   flex-direction: column;
 `
 
-const OnOffSwitch = styled.View`
-  position: absolute;
-  top: ${GUTTER * 2}px;
-  right: ${GUTTER / 2}px;
+const MoreButton = styled.View`
+  margin-right: ${GUTTER / 2}px;
 `
 
 export default ({colors, onTitleChange, scrollAnim, title}) => {
@@ -96,11 +83,12 @@ export default ({colors, onTitleChange, scrollAnim, title}) => {
           0,
           SCENE_HEADER_EXPANDED_HEIGHT - SCENE_HEADER_COLLAPSED_HEIGHT
         ],
-        outputRange: [FONT_SIZE.XLARGE, FONT_SIZE.XLARGE * 0.6],
+        outputRange: [FONT_SIZE.XLARGE, FONT_SIZE.XLARGE * 0.5],
         extrapolate: 'clamp'
       }),
     []
   )
+
   const headlineTransformX = useMemo(
     () =>
       scrollAnim.interpolate({
@@ -116,20 +104,7 @@ export default ({colors, onTitleChange, scrollAnim, title}) => {
 
   return (
     <StyledAnimatedGradient colors={colors} speed={1500}>
-      <BackButton>
-        <TouchableWithoutFeedback>
-          <BackIcon name="arrow-left" />
-        </TouchableWithoutFeedback>
-      </BackButton>
-      <OnOffSwitch>
-        <Switch
-          ios_backgroundColor={COLORS.TRANSPARENT_GRAY}
-          trackColor={{
-            false: 'transparent',
-            true: 'transparent'
-          }}
-        />
-      </OnOffSwitch>
+      <SceneHeaderActions />
       <HeadlineContainer
         style={{
           transform: [
@@ -147,7 +122,7 @@ export default ({colors, onTitleChange, scrollAnim, title}) => {
           maxLength={SCENE_NAME_MAX_LENGTH}
           onChangeText={onTitleChange}
           onBlur={() => {
-            !title && onTitleChange('Untitled')
+            !title && onTitleChange('New Scene')
             setIsEditing(false)
           }}
           onFocus={() => setIsEditing(true)}

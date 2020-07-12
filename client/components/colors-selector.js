@@ -1,4 +1,4 @@
-import {Color} from 'components'
+import {AddNewColor, Color} from 'components'
 import {SPACE_AROUND_GUTTER} from 'constants'
 import React from 'react'
 import styled from 'styled-components/native'
@@ -20,5 +20,6 @@ export default ({colors, onColorSelect}) => (
         selected={selected}
       />
     ))}
+    <AddNewColor />
   </ColorsSelectorContainer>
 )
