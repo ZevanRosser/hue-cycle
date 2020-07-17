@@ -33,9 +33,9 @@ export default ({onAnimationComplete}) => {
   useEffect(() => {
     Animated.loop(
       Animated.timing(anim, {
-        toValue: 1,
         duration: ANIMATION_TIMINGS.XSLOW,
         easing: Easing.linear,
+        toValue: 1,
         useNativeDriver: true
       }),
       Animated.timing(anim, {
@@ -48,15 +48,12 @@ export default ({onAnimationComplete}) => {
   }, [])
 
   useEffect(() => {
-    if (!initialized) {
-      return
-    }
-
-    Animated.timing(fadeAnim, {
-      toValue: 0,
-      duration: ANIMATION_TIMINGS.SLOW,
-      useNativeDriver: true
-    }).start(onAnimationComplete)
+    initialized &&
+      Animated.timing(fadeAnim, {
+        toValue: 0,
+        duration: ANIMATION_TIMINGS.SLOW,
+        useNativeDriver: true
+      }).start(onAnimationComplete)
   }, [initialized])
 
   return (

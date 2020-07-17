@@ -1,23 +1,22 @@
 import {AddNewColor, Color} from 'components'
-import {SPACE_AROUND_GUTTER} from 'constants'
+import {COLOR_GUTTER} from 'constants'
 import React from 'react'
 import styled from 'styled-components/native'
 
 const ColorsSelectorContainer = styled.View`
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin: -${SPACE_AROUND_GUTTER * 2}px;
+  margin: -${COLOR_GUTTER * 2}px;
 `
 
-export default ({colors, onColorSelect}) => (
+export default ({colors, onColorSelect, selectedColors}) => (
   <ColorsSelectorContainer>
-    {colors.map(({color, selected}) => (
+    {colors.map(color => (
       <Color
         color={color}
         key={color}
         onPress={onColorSelect}
-        selected={selected}
+        selected={selectedColors.includes(color)}
       />
     ))}
     <AddNewColor />

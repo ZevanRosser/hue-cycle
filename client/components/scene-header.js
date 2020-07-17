@@ -50,10 +50,6 @@ const StyledAnimatedGradient = styled(props => <AnimatedGradient {...props} />)`
   flex-direction: column;
 `
 
-const MoreButton = styled.View`
-  margin-right: ${GUTTER / 2}px;
-`
-
 export default ({colors, onTitleChange, scrollAnim, title}) => {
   const [isEditing, setIsEditing] = useState(false)
   const [cursorAnim] = useState(new Animated.Value(1))

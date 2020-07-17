@@ -19,9 +19,9 @@ export default () => {
 
   return (
     <LayoutContainer>
-      {loading && (
+      {/* {loading && (
         <Splash onAnimationComplete={() => dispatch(setLoading(false))} />
-      )}
+      )} */}
       <Navigation.Navigator initialScreen={SCREENS.SCENE}>
         <Navigation.Screen name={SCREENS.SCENES} />
         <Navigation.Screen name={SCREENS.SCENE}>

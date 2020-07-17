@@ -4,7 +4,7 @@ import {
   SCENE_HEADER_COLLAPSED_HEIGHT,
   SCENE_HEADER_EXPANDED_HEIGHT
 } from 'constants'
-import {ColorsSelector, SceneHeader} from 'components'
+import {ColorsSelector, LightsSelector, SceneHeader} from 'components'
 import React, {useMemo, useState} from 'react'
 import {Animated} from 'react-native'
 import {withState} from 'state'
@@ -38,11 +38,7 @@ export default () => {
       }),
     []
   )
-  const scene = scenes.find(({selected}) => selected)
-  const sceeneColors = useMemo(
-    () => scene.colors.filter(({selected}) => selected).map(({color}) => color),
-    [JSON.stringify(scene.colors)]
-  )
+  const scene = scenes.find(({editing}) => editing)
 
   return (
     <>
@@ -51,7 +47,7 @@ export default () => {
           height: headerContainerHeight
         }}>
         <SceneHeader
-          colors={sceeneColors}
+          colors={scene.selectedColors}
           onTitleChange={title => dispatch(setSceneName(scene.id, title))}
           scrollAnim={scrollAnim}
           title={scene.name}
@@ -73,14 +69,20 @@ export default () => {
           <Section>
             <Headline>Colors</Headline>
             <ColorsSelector
+              colors={scene.colors}
               onColorSelect={color =>
                 dispatch(toggleSceneColor(scene.id, color))
               }
-              colors={scene.colors}
+              selectedColors={scene.selectedColors}
             />
           </Section>
           <Section>
             <Headline>Lights</Headline>
+            <LightsSelector
+              lights={scene.lights}
+              onLightSelect={light => null}
+              selectedLights={scene.selectedLights}
+            />
           </Section>
           <Section>
             <Headline>Behavior</Headline>

@@ -1,32 +1,33 @@
-import {COLORS, COLOR_DOT_SIZE, SPACE_AROUND_GUTTER} from 'constants'
+import {COLORS, COLOR_DOT_SIZE, COLOR_GUTTER} from 'constants'
 import React from 'react'
 import {TouchableWithoutFeedback} from 'react-native'
-import Icon from 'react-native-vector-icons/FontAwesome'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import styled from 'styled-components/native'
 
 const AddNewColor = styled.View`
   align-items: center;
-  background-color: ${COLORS.DARK_GRAY};
+  background-color: ${COLORS.WHITE};
   border-color: ${COLORS.BLACK};
   border-radius: ${COLOR_DOT_SIZE / 2}px;
-  height: 100%;
+  height: ${COLOR_DOT_SIZE - COLOR_GUTTER * 4}px;
   justify-content: center;
-  margin-right: auto;
-  width: 100%;
+  width: ${COLOR_DOT_SIZE - COLOR_GUTTER * 4}px;
 `
 
 const AddNewColorContainer = styled.View`
   align-items: center;
   height: ${COLOR_DOT_SIZE}px;
   justify-content: center;
-  margin: ${SPACE_AROUND_GUTTER}px;
-  padding: ${SPACE_AROUND_GUTTER * 2}px;
+  margin: ${COLOR_GUTTER}px;
   width: ${COLOR_DOT_SIZE}px;
 `
 
 const AddNewIcon = styled(props => <Icon {...props} />)`
-  color: ${COLORS.WHITE};
-  font-size: 20px;
+  color: ${COLORS.DARK_GRAY};
+  font-size: 30px;
+  left: 1px;
+  position: relative;
+  top: 1px;
 `
 
 export default () => {
@@ -34,7 +35,7 @@ export default () => {
     <TouchableWithoutFeedback>
       <AddNewColorContainer>
         <AddNewColor>
-          <AddNewIcon name="plus" />
+          <AddNewIcon name="palette" />
         </AddNewColor>
       </AddNewColorContainer>
     </TouchableWithoutFeedback>
